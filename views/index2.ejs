@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryption</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://images.ctfassets.net/yewqr8zk7e5s/migrated-4572/61ee98fb5087c9873948b5473cfafb16/encryption-encoding-hashing.jpg?w=1000&h=559&fl=progressive&q=50&fm=jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .type {
+            padding: 200px 100px;
+            text-align: center;
+
+        }
+
+        button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            color: #2196f3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        button:hover {
+            color: #255784;
+            box-shadow: 0 0 10px #eaedf0, 0 0 40px #eaedf0, 0 0 80px #eaedf0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center" style="color: #ffff;">
+            File Encryption & Decryption
+        </h1>
+        <br><br>
+
+        <!-- frontend for uploading and encrypting file -->
+        <form action="/encode1" method="post" enctype="multipart/form-data">
+            <div class="form-group container">
+                <label for="file"style="color: #ffff;">Upload File :</label>
+                <br><br>
+                <input class="form-control" type="file" name="file" style="width: 30%;" id="" required>
+            </div> 
+            <br>
+            <div class="form-group container">
+                <button class="btn btn-primary">
+                    Encrypt File
+                </button>
+            </div>
+        </form>
+
+        <!-- frontend for uploading the encrypted file and decrypting it -->
+        <form action="/decode1" method="post" enctype="multipart/form-data">
+            <div class="form-group container">
+                <br><br>
+                <label for="file"style="color: #ffff;">Upload Encrypted File :</label>
+                <br><br>
+                <input class="form-control" type="file" name="file" id="" style="width: 30%;" required>
+            </div>
+            <br>
+            <div class="form-group container">
+                <button class="btn btn-success">
+                    Decrypt File
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html> 
