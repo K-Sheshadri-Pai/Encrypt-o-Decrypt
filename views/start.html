@@ -39,7 +39,7 @@
         width: 100%;
     }
 
-    .logo{
+    .logo {
         height: 80px;
         width: 80px;
         cursor: pointer;
@@ -61,7 +61,7 @@
     .nav__links li {
         display: inline-block;
         padding: 0px 20px;
-        
+        cursor: pointer;
     }
 
     .nav__links li a {
@@ -76,35 +76,43 @@
     }
 
     .try-now-button {
-      background-color: rgb(57, 57, 82);
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
+        background-color: rgb(57, 57, 82);
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
     }
 
     .try-now-button:hover {
-      background-color: rgb(83, 83, 106);
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
+        background-color: rgb(83, 83, 106);
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
     }
 
     .text-encryption-section {
         background: url(https://wallpapercave.com/wp/LSm9EYn.png);
         overflow: hidden;
-       padding-top: 30px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     
     .image-encryption-section {
         background: url(https://wallpapercave.com/wp/LSm9EYn.png);
         overflow: hidden;
         padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .file-encryption-section {
@@ -112,11 +120,14 @@
         overflow: hidden;
         padding-top: 30px;
         padding-bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .inner-container {
         width: 55%;
-        float : right;
         background-color: #efefef;
         padding: 30px;
         margin: 20px 20px 50px 0px;
@@ -124,22 +135,6 @@
     }
 
     .inner-container h1 {
-        margin-bottom: 30px;
-        font-size: 30px;
-        font-weight: 900;
-        color: rgb(57, 57, 82);
-    }
-
-    .inner-container1 {
-        width: 55%;
-        float : left;
-        background-color: #efefef;
-       padding: 30px;
-        margin: 20px 0px 50px 20px;
-        border-radius: 10px;
-    }
-
-    .inner-container1 h1 {
         margin-bottom: 30px;
         font-size: 30px;
         font-weight: 900;
@@ -154,7 +149,7 @@
         margin-bottom: 40px;
     }
 
-    footer{
+    footer {
         background: #111;
         height: auto;
         width: 100vw;
@@ -163,7 +158,7 @@
         color: #fff;
     }
 
-    .footer-content{
+    .footer-content {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -171,7 +166,7 @@
         text-align: center;
     }
 
-    .footer-content h3{
+    .footer-content h3 {
         font-size: 2rem;
         font-weight: 400;
         text-transform: capitalize;
@@ -179,14 +174,14 @@
         color: #b7a7b0;
     }
 
-    .footer-content p{
+    .footer-content p {
         max-width: 500px;
         margin: 10px auto;
         line-height: 28px;
         font-size: 14px;
     }
 
-    .socials{
+    .socials {
         list-style: none;
         display: flex;
         align-items: center;
@@ -195,39 +190,39 @@
         padding: 0px;
     }
 
-    .socials li{
+    .socials li {
         margin: 0 10px;
     }
 
-    .socials a{
+    .socials a {
         text-decoration: none;
         color: #fff;
     }
 
-    .socials a i{
+    .socials a i {
         font-size: 2.2rem;
         transition: color .4s ease;
     }
 
-    .socials a:hover i{
-        color: rgb(255, 63, 166);
+    .socials a:hover i {
+        color: rgb(150, 90, 255);
     }
 
-    .footer-bottom{
+    .footer-bottom {
         background: #000;
         width: 100vw;
         padding: 5px 0;
         text-align: center;
     }
 
-    .footer-bottom p{
+    .footer-bottom p {
         font-size: 16px;
         word-spacing: 2px;
         text-transform: capitalize;
         color: rgb(255, 199, 229);
     }
 
-    .footer-bottom span{
+    .footer-bottom span {
         text-transform: uppercase;
         opacity: .4;
         font-weight: 200;
@@ -243,12 +238,6 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        color: rgb(57, 57, 82);
     }
 
     .team-members {
@@ -295,8 +284,9 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-weight: 600;
         font-size: 28px;
-        color: #4f2b40;
-        margin-bottom: 50px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: rgb(57, 57, 82);
     }
 
     .about-content {
@@ -317,8 +307,7 @@
         line-height: 1.6;
         margin-bottom: 20px;
     }
-
-    
+     
   </style>
 
 </head>
@@ -330,11 +319,11 @@
     <h3>Encrypt-O-Decrypt</h3>
     <nav>
         <ul class="nav__links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#section1">Text Encryption</a></li>
-            <li><a href="#section2">Image Encryption</a></li>
-            <li><a href="#section3">File Encryption</a></li>
-            <li><a href="#team-section">Our Team</a></li>
+            <li onclick="sec1Function()"><a>Home</a></li>
+            <li onclick="sec2Function()"><a>Text Encryption</a></li>
+            <li onclick="sec3Function()"><a>Image Encryption</a></li>
+            <li onclick="sec4Function()"><a>File Encryption</a></li>
+            <li onclick="sec5Function()"><a>Our Team</a></li>
         </ul>
     </nav>
   </header>
@@ -345,18 +334,20 @@
             <div class="container">
               <h2>Team Encryption Decryption</h2>
               <div class="about-content">
-                <p style="margin-bottom: 50px;"> Aavishk Sustainable Solutions Pvt Ltd. let students of NMAMIT experience industry standards right in the college
+                <p style="margin-bottom: 50px;"> 
+                    Aavishk Sustainable Solutions Pvt Ltd. let students of NMAMIT experience industry standards right in the college
                     by providing internship. objective of the internship was to develop a web framework which allows the user to 
-                    encrypt and decrypt text, images and files using various techniques. To know more how it works, lets get started !!</p>
-                <a href="#section1">
-                    <button class="try-now-button"> Let's Get Started </button>
-                </a>
+                    encrypt and decrypt text, images and files using various techniques. To know more how it works, lets get started !!
+                </p>
+                
+                <button class="try-now-button" onclick="sec2Function()"> Let's Get Started </button>
+                
             </div>
             </div>
           </section>
           
 
-      <div class="text-encryption-section" id="section1">
+      <div class="text-encryption-section">
         <div class="inner-container">
             <h1>Text Encryption</h1>
             <p class="text">
@@ -369,8 +360,8 @@
         </div>
       </div>
     
-      <div class="image-encryption-section" id="section2">
-        <div class="inner-container1">
+      <div class="image-encryption-section">
+        <div class="inner-container">
             <h1>Image Encryption</h1>
             <p class="text">
                 Image Encryption is the process of encoding secret image with the help of some encryption algorithm in such a way that 
@@ -383,7 +374,7 @@
         </div>
       </div>
 
-      <div class="file-encryption-section" id="section3">
+      <div class="file-encryption-section">
         <div class="inner-container">
             <h1>File Encryption</h1>
             <p class="text">
@@ -398,7 +389,7 @@
 
     </div>
 
-    <section id="team-section">
+    <section>
         <div class="container">
           <h2>Meet Our Team</h2>
           <div class="team-members">
@@ -445,6 +436,28 @@
         </div>
     </footer>
       
-  
+    <script>
+        function sec1Function() {
+          window.scrollTo(0,0)
+        }
+
+        function sec2Function() {
+          window.scrollTo(0,340)
+        }
+
+        function sec3Function() {
+          window.scrollTo(0,760)
+        }
+
+        function sec4Function() {
+          window.scrollTo(0,1175)
+        }
+
+        function sec5Function() {
+          window.scrollTo(0,1637)
+        }
+    </script>
+
+
 </body>
 </html>
