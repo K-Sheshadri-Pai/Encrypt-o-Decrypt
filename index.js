@@ -30,6 +30,7 @@ var upload = multer({ storage: storage }).single('file');         //storage vari
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(express.static('public/uploads'))
+app.use(express.static('public/images'));
 const PORT = process.env.PORT || 5000                            //setting port value to 5000
 app.set('view engine','ejs')
 

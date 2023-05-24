@@ -8,42 +8,58 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('https://www.woodmac.com/siteassets/article-images/2019/q2/homepage-image-v2.png?width=800&height=400&mode=crop&center=0.5,0.5');
+            background-image: url('https://htmlcolors.com/gradients-images/53-light-purple-gradient.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
             
         }
+
         button {
             position: relative;
             display: inline-block;
             padding: 15px 30px;
-            color: #2196f3;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
             font-size: 24px;
         }
 
-        button:hover {
-            color: #255784;
-            box-shadow: 0 0 10px #eaedf0, 0 0 40px #eaedf0, 0 0 80px #eaedf0;
+        .try-now-button {
+            background-color: rgb(57, 57, 82);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
         }
+
+        .try-now-button:hover {
+            background-color: rgb(83, 83, 106);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
     </style>   
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center" style="color: #ffff;">
+        <h2 class="text-center" style="color: rgb(57, 57, 82); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 600;">
             Image Encryption & Decryption
-        </h1>
+        </h2>
         <br><br>
 
         <!-- frontend for uploading and encrypting image -->
         <form action="/encode" method="post" enctype="multipart/form-data">
-            <div class="form-group container"style="color: #ffff;">
+            <div class="form-group container" style="color: rgb(57, 57, 82); font-size: 16px;">
                 <label for="file">Upload Image :</label>
                 <br><br>
-                <input class="form-control" type="file" name="file" id="" style="width: 30%;" required>
+                <input class="form-control" type="file" name="file" id="" style="width: 50%; font-size: 16px; height: 38px" required>
             </div> 
             <br>
             <div class="form-group container">
@@ -57,9 +73,9 @@
         <form action="/decode" method="post" enctype="multipart/form-data">
             <div class="form-group container">
                 <br><br>
-                <label for="file"style="color: #ffff;">Upload Encrypted Image :</label>
+                <label for="file"style="color: rgb(57, 57, 82); font-size: 16px;">Upload Encrypted Image :</label>
                 <br><br>
-                <input class="form-control" type="file" name="file" id="" style="width: 30%;" required>
+                <input class="form-control" type="file" name="file" id="" style="width: 50%; font-size: 16px; height: 38px" required>
             </div>
             <br>
             <div class="form-group container">
@@ -68,6 +84,10 @@
                 </button>
             </div>
         </form>
+
+        <a href="/">
+            <button class="try-now-button" style=" position: fixed; bottom: 90px; right: 650px; font-weight: bold;" >Go To Home</button>
+        </a>
 
     </div>
 </body>

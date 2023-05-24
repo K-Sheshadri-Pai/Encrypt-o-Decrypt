@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -8,96 +7,444 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Encrypt-O-Decrypt</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-        .type {
-            padding: 200px 100px;
-            text-align: center;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        }
+  <style>
 
-        button {
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            position: relative;
-            display: inline-block;
-            padding: 10px 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background-color: #00bfff96;
-            border-radius: 10px;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        .button2 {background-color: #00b606c6;}
-        .button3 {background-color: #ff0000a9;}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-        button:hover {
-            box-shadow: 0 0 5px #eaedf0, 0 0 20px #eaedf0, 0 0 40px #eaedf0;
-        }
+    li, a {
+        font-weight: 500;
+        font-size: 16px;
+        color: #545454;
+        text-decoration: none;
+    }
 
-        .hero{
-            min-height: 90vh;
-            width: 100%;
-            background-image: url(https://images.ctfassets.net/yewqr8zk7e5s/migrated-4572/61ee98fb5087c9873948b5473cfafb16/encryption-encoding-hashing.jpg?w=1000&h=559&fl=progressive&q=50&fm=jpg); 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            color: #fff;
-            padding: 0 8%;
-        }
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 10%;
+        background-color: #efefef;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
-    </style>
+    .logo{
+        height: 80px;
+        width: 80px;
+        cursor: pointer;
+        margin-right: 0px;
+    }
+
+    h3 {
+        margin-top: 7px;
+        color: rgb(57, 57, 82);
+        cursor: pointer;
+    }
+
+    .nav__links {
+        list-style: none;
+        font-size: 30px;
+        
+    }
+
+    .nav__links li {
+        display: inline-block;
+        padding: 0px 20px;
+        
+    }
+
+    .nav__links li a {
+        transition: all 0.3s ease 0s;
+        color: rgb(57, 57, 82);
+        text-decoration: none;
+    }
+
+    .nav__links li a:hover {
+        color: rgb(210, 0, 112);
+        text-decoration: none;
+    }
+
+    .try-now-button {
+      background-color: rgb(57, 57, 82);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .try-now-button:hover {
+      background-color: rgb(83, 83, 106);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .text-encryption-section {
+        background: url(https://wallpapercave.com/wp/LSm9EYn.png);
+        overflow: hidden;
+       padding-top: 30px;
+    }
+    
+    .image-encryption-section {
+        background: url(https://wallpapercave.com/wp/LSm9EYn.png);
+        overflow: hidden;
+        padding-top: 30px;
+    }
+
+    .file-encryption-section {
+        background: url(https://wallpapercave.com/wp/LSm9EYn.png);
+        overflow: hidden;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .inner-container {
+        width: 55%;
+        float : right;
+        background-color: #efefef;
+        padding: 30px;
+        margin: 20px 20px 50px 0px;
+        border-radius: 10px;
+    }
+
+    .inner-container h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 900;
+        color: rgb(57, 57, 82);
+    }
+
+    .inner-container1 {
+        width: 55%;
+        float : left;
+        background-color: #efefef;
+       padding: 30px;
+        margin: 20px 0px 50px 20px;
+        border-radius: 10px;
+    }
+
+    .inner-container1 h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 900;
+        color: rgb(57, 57, 82);
+    }
+
+    .text {
+        font-size: 15px;
+        color: #545454;
+        line-height: 30px;
+        text-align: justify;
+        margin-bottom: 40px;
+    }
+
+    footer{
+        background: #111;
+        height: auto;
+        width: 100vw;
+        font-family: "Open Sans";
+        padding-top: 10px;
+        color: #fff;
+    }
+
+    .footer-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content h3{
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+        color: #b7a7b0;
+    }
+
+    .footer-content p{
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+    }
+
+    .socials{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+        padding: 0px;
+    }
+
+    .socials li{
+        margin: 0 10px;
+    }
+
+    .socials a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .socials a i{
+        font-size: 2.2rem;
+        transition: color .4s ease;
+    }
+
+    .socials a:hover i{
+        color: rgb(255, 63, 166);
+    }
+
+    .footer-bottom{
+        background: #000;
+        width: 100vw;
+        padding: 5px 0;
+        text-align: center;
+    }
+
+    .footer-bottom p{
+        font-size: 16px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        color: rgb(255, 199, 229);
+    }
+
+    .footer-bottom span{
+        text-transform: uppercase;
+        opacity: .4;
+        font-weight: 200;
+        color: #f5f5f5;
+    }
+
+    #team-section {
+        background-color: #f3f3f3;
+        padding: 20px 0px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: rgb(57, 57, 82);
+    }
+
+    .team-members {
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-member {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .team-member img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .team-member p {
+        font-size: 14px;
+        color: #888;
+    }
+
+    #about {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        background: url(https://wallpapercave.com/wp/LSm9EYn.png);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h2 {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 600;
+        font-size: 28px;
+        color: #4f2b40;
+        margin-bottom: 50px;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    p {
+        font-size: 17px;
+        color: #1f1f1f;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    
+  </style>
+
 </head>
 
-<body class="hero">
+<body>
+    
+  <header>
+    <img class="logo" src="https://clipground.com/images/png-encryption-4.png"/>
+    <h3>Encrypt-O-Decrypt</h3>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#section1">Text Encryption</a></li>
+            <li><a href="#section2">Image Encryption</a></li>
+            <li><a href="#section3">File Encryption</a></li>
+            <li><a href="#team-section">Our Team</a></li>
+        </ul>
+    </nav>
+  </header>
 
-    <div class="header"></div>
+    <div style=" margin-top:95px">
 
-    <div class="cont">
+        <section id="about">
+            <div class="container">
+              <h2>Team Encryption Decryption</h2>
+              <div class="about-content">
+                <p style="margin-bottom: 50px;"> Aavishk Sustainable Solutions Pvt Ltd. let students of NMAMIT experience industry standards right in the college
+                    by providing internship. objective of the internship was to develop a web framework which allows the user to 
+                    encrypt and decrypt text, images and files using various techniques. To know more how it works, lets get started !!</p>
+                <a href="#section1">
+                    <button class="try-now-button"> Let's Get Started </button>
+                </a>
+            </div>
+            </div>
+          </section>
+          
 
-        <div class="w3-cursive">
-            <h1 class="text-center" style="color: #fff; font-family:'Times New Roman', Times, serif; font-size: 60px; padding-top: 35px; text-shadow: 2px 2px 4px rgb(217, 216, 216);">
-                <b>Encrypt-O-Decrypt</b>
-            </h1>
-        </div>
-
-        <div class="type">
-
-            <br><br><br>
-
+      <div class="text-encryption-section" id="section1">
+        <div class="inner-container">
+            <h1>Text Encryption</h1>
+            <p class="text">
+                Text Encryption is the process of converting human-readable plaintext to incomprehensible text, also known as ciphertext.
+                Text encryption ensures that the sender and the intended recipient are the only parties that can read a message content.
+            </p>
             <a href="index">
-                <button class="button">
-                    <b>Text Encryption</b>                 <!--Redirects to Text Encryption Page-->
-                </button>
+                <button class="try-now-button"> Try Text Encryption </button>
             </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="index1">
-                <button class="button button2">
-                    <b>Image Encryption</b>                <!--Redirects to Image Encryption Page-->
-                </button>
-            </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="index2">
-                <button class="button button3">
-                    <b>File Encryption</b>                 <!--Redirects to File Encryption Page-->
-                </button>
-            </a>
-
         </div>
+      </div>
+    
+      <div class="image-encryption-section" id="section2">
+        <div class="inner-container1">
+            <h1>Image Encryption</h1>
+            <p class="text">
+                Image Encryption is the process of encoding secret image with the help of some encryption algorithm in such a way that 
+                unauthorized users cannot access it. Image encryption has applications in internet communication, multimedia systems,
+                medical imaging, telemedicine, military communication etc.
+            </p>
+            <a href="index1">
+                <button class="try-now-button"> Try Image Encryption </button>
+            </a>
+        </div>
+      </div>
+
+      <div class="file-encryption-section" id="section3">
+        <div class="inner-container">
+            <h1>File Encryption</h1>
+            <p class="text">
+                File Encryption is the process of encoding files, including the sensitive data they contain, in order to send them securely. 
+                File encryption sees to it that our files are not at risk, also ensuring that the security is not compromised.
+            </p>
+            <a href="index2">
+                <button class="try-now-button"> Try File Encryption Now </button>
+            </a>
+        </div>
+      </div>
 
     </div>
 
-    <div class="footer"></div>
-
+    <section id="team-section">
+        <div class="container">
+          <h2>Meet Our Team</h2>
+          <div class="team-members">
+            <div class="team-member">
+              <img src="https://github.com/K-Sheshadri-Pai/avysh-profile-images/assets/91612140/ec437215-1a06-421d-a426-2af0c5a18623" alt="Team Member 1">
+              <h3>SHESHADRI (CSE)</h3>
+              <p>4NM19CS088</p>
+            </div>
+            <div class="team-member">
+              <img src="https://github.com/K-Sheshadri-Pai/avysh-profile-images/assets/91612140/9698ccd4-9ff8-4ddc-a124-588c6889371c" alt="Team Member 2">
+              <h3>RAKSHA (ISE)</h3>
+              <p>4NM19IS128</p>
+            </div>
+            <div class="team-member">
+                <img src="https://github.com/K-Sheshadri-Pai/avysh-profile-images/assets/91612140/7ea653aa-54c6-4eff-8f2f-c5ff6e90768d" alt="Team Member 3">
+                <h3>SUHAN (CSE)</h3>
+                <p>4NM19CS195</p>
+              </div>
+            <div class="team-member">
+                <img src="https://github.com/K-Sheshadri-Pai/avysh-profile-images/assets/91612140/a34731dd-0ea4-48c6-8c93-847d5a621182" alt="Team Member 3">
+                <h3>HEMA (CSE)</h3>
+                <p>4NM19CS078</p>
+              </div>
+              <div class="team-member">
+                <img src="https://github.com/K-Sheshadri-Pai/avysh-profile-images/assets/91612140/2a16bbf2-78c5-4615-8a47-850a9828a163" alt="Team Member 3">
+                <h3>AADARSH (ISE)</h3>
+                <p>4NM19IS001</p>
+              </div>
+          </div>
+        </div>
+      </section>
+      
+    <footer>
+        <div class="footer-content">
+            <h3>Encrypt - O - Decrypt</h3>
+            <ul class="socials">
+                <li><a href="https://www.instagram.com/mr_.sheshu/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/K-Sheshadri-Pai"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/k-sheshadri-pai/"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2022 Avysh Internship. designed by <span>Team Encryption Decryption</span></p>
+        </div>
+    </footer>
+      
+  
 </body>
-
 </html>

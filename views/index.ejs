@@ -9,84 +9,133 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <style>
         body {
-            background-image: url('https://www.thomsonreuters.com/en-us/posts/wp-content/uploads/sites/20/2021/05/QA-Bock-image-800x450.jpg');
+            background-image: url('https://htmlcolors.com/gradients-images/53-light-purple-gradient.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: 100% 100%;
-            
+            background-size: 100% 100%; 
         }
+
         button {
             position: relative;
             display: inline-block;
             padding: 15px 30px;
-            color: #2196f3;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
             font-size: 24px;
         }
 
-        button:hover {
-            color: #255784;
-            box-shadow: 0 0 10px #eaedf0, 0 0 40px #eaedf0, 0 0 80px #eaedf0;
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
+
+        select {
+            margin-left: 20px;
+            width: 20%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .try-now-button {
+            background-color: rgb(57, 57, 82);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .try-now-button:hover {
+            background-color: rgb(83, 83, 106);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
     </style>    
 </head>
-<body>
+<body> 
 
     <div class="container">
         <br>
-        <h1 class="text-center" style="color: #ffff;">
+        <h2 class="text-center" style="color: rgb(57, 57, 82); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 600;">
             Text Encryption & Decryption
-        </h1>
+        </h2>
         <br><br>
 
             <!--frontend to input text and select technique-->
             <div class="form-group container">        
-                <label for="name" style="color: #ffff;">Enter text :</label>
+
+                <label for="name" style="color: rgb(57, 57, 82); font-size: 16px;">Enter Text</label>
+                <input type="text" id="name" name="name" placeholder="Enter some text ..." style="color: rgb(57, 57, 82); font-size: 16px;" required>
+
                 <br><br>
-                <input type="text" id="name" name="name" placeholder="Enter some text" required><br><br>
+                <label for="technique" style="color: rgb(57, 57, 82); font-size: 16px;">Select encryption technique : </label>
 
-                <label for="technique"style="color: #ffff;">Select encryption technique : </label>
-
-                <select name="technique" id="select">
+                <select name="technique" id="select" >
                     <option value="none" selected disabled hidden>Select one</option>
                     <option value="rsa" name="rsa">RSA</option>
                     <option value="tdes" name="tdes">TDES</option>
                     <option value="aes" name="aes">AES</option>
                 </select>
 
-                <br>
-                <div id="encryptedText" style="color: #ffff; width: 50%; word-wrap:break-word;">
-                </div>
+                
+                <div id="encryptedText" style="margin-top: 32px; color: rgb(57, 57, 82); width: 50%; word-wrap:break-word;"></div>
             </div>
 
-            <div class="form-group container">
+            <div class="form-group container" >
                 <button class="btn btn-primary" onclick="techselect(document.getElementById('select').value)">
                     Encrypt Text
                 </button>
             </div>
 
             <br>
-            <div class="form-group container">
-                
-            </div>
+            
 
             <!--frontend to input encrypted text and decrypt using selected technique-->
             <div class="form-group container">
-                <label for="name1" style="color: #ffff;">Encrypted text :</label>
-                <br><br>
-                <input type="text" id="name1" name="name1" placeholder="Enter encrypted text" required><br><br>
 
-                <div id="decryptedText" style=" color:#ffff; width:50%;">
+                <label for="name1" style="color: rgb(57, 57, 82); font-size: 16px;">Encrypted Text</label>
+                <input type="text" id="name1" name="name1" placeholder="Enter encrypted text ..." style="color: rgb(57, 57, 82); font-size: 16px;" required>
+
+                <div id="decryptedText" style="margin: 0; color: rgb(57, 57, 82); width: 50%; word-wrap:break-word;">
                 </div>
 
             </div>
+
+            <br>
             <div class="form-group container">
                 <button class="btn btn-success" onclick="techselect1(document.getElementById('select').value)">
                     Decrypt Text
                 </button>
             </div>
+
+            <div class="center">
+                <a href="/">
+                    <button class="try-now-button">Go To Home</button>
+                </a>
+            </div>
+            
         
     </div>
   
@@ -106,7 +155,7 @@
             },
             success: function(encryptedText) {               //displaying the encrypted text on webpage
                 var html = '';
-                html += '<h3>Encrypted text is:<h3><h5><b>' + encryptedText + '</b></h5>';
+                html += '<h4> Encrypted text is : ' + encryptedText + '</h4>';
                 $('#encryptedText').html(html);
             }
             });
@@ -125,7 +174,7 @@
             },
             success: function(decryptedText) {              //displaying the decrypted text on webpage
                 var html = '';
-                html += '<h3>Decrypted text is:<h3><h5><b>' + decryptedText + '</b></h5>';
+                html += '<h4>Decrypted text is : ' + decryptedText + '</h4>';
                 $('#decryptedText').html(html);  
             }
             });
